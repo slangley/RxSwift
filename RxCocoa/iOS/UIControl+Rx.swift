@@ -55,7 +55,7 @@ extension UIControl {
         return ControlEvent(source: source)
     }
     
-    func rx_value<T>(getter getter: () -> T, setter: T -> Void) -> ControlProperty<T> {
+    public func rx_value<T>(getter getter: () -> T, setter: T -> Void) -> ControlProperty<T> {
         let source: Observable<T> = AnonymousObservable { observer in
             
             observer.on(.Next(getter()))
